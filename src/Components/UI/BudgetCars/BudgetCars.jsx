@@ -29,6 +29,7 @@ const BudgetCars = () => {
 
   return (
     <div className="budget">
+    <div className = "container">
       <div className="budget__container">
         <div className="budget__header">
           <h1>Budget Cars Rental Emirates</h1>
@@ -48,6 +49,7 @@ const BudgetCars = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import React from "react";
 import "./card.scss";
-
 const Card = ({ item, location }) => {
   const body = () => {
     if (location === "budget") {
