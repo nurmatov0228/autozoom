@@ -5,6 +5,7 @@ import Card from "../Card/Card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { NavLink } from "react-router-dom";
 
 const BudgetCars = () => {
   const API = `https://realauto.limsa.uz/api/cars`;
@@ -33,7 +34,23 @@ const BudgetCars = () => {
         <div className="budget__container">
           <div className="budget__header">
             <h1>Budget Cars Rental Emirates</h1>
-            <button className="budget__see-all">See All &gt;</button>
+            <NavLink to="/avto" className="btnRuB">
+              <p>SEE ALL</p>
+              <svg
+                className="imgbtn"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="path"
+                  d="M13 10L21 16.5L13 23L17.5714 16.5L13 10Z"
+                />
+                <circle className="circle" cx="16" cy="16" r="15.5" />
+              </svg>
+            </NavLink>
           </div>
           <Swiper
             className="budget__cards mySwiper"
