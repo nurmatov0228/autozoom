@@ -19,7 +19,7 @@ const Card = ({ item, location }) => {
             <span>AED 0</span>
             <span>$ 0</span>
           </div>
-          <p className="card__text">per day</p>
+          <p className="card__text">per day: {item?.limitperday}</p>
         </div>
       );
     } else {
