@@ -29,27 +29,27 @@ const BudgetCars = () => {
 
   return (
     <div className="budget">
-    <div className = "container">
-      <div className="budget__container">
-        <div className="budget__header">
-          <h1>Budget Cars Rental Emirates</h1>
-          <button className="budget__see-all">See All &gt;</button>
+      <div className="container">
+        <div className="budget__container">
+          <div className="budget__header">
+            <h1>Budget Cars Rental Emirates</h1>
+            <button className="budget__see-all">See All &gt;</button>
+          </div>
+          <Swiper
+            className="budget__cards mySwiper"
+            slidesPerView={3}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+          >
+            {budgetCars.map((item) => (
+              <SwiperSlide>
+                <Card key={item.id} item={item} location={"budget"} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-        <Swiper
-          className="budget__cards mySwiper"
-          slidesPerView={3}
-          spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
-        >
-          {budgetCars.map((item) => (
-            <SwiperSlide>
-              <Card key={item.id} item={item} location={"budget"} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
       </div>
     </div>
   );
