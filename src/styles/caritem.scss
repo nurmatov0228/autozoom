@@ -1,0 +1,137 @@
+// .car-item {
+//   color: #fff;
+//   text-align: center;
+//   background-color: #1e1e1e;
+//   padding: 20px;
+//   border-radius: 8px;
+
+//   h1 {
+//     font-size: 24px;
+//     margin-bottom: 20px;
+//     font-weight: bold;
+//   }
+
+//   /* Slayder */
+//   .car-slider {
+//     position: relative;
+//     margin-bottom: 20px;
+
+//     .swiper {
+//       width: 100%;
+//       height: 300px;
+//     }
+
+//     .swiper-slide {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       img {
+//         width: 80%;
+//         height: auto;
+//         border-radius: 5px;
+//       }
+//     }
+
+//     /* Thumbnail rasmlar */
+//     .thumbnails {
+//       display: flex;
+//       justify-content: center;
+//       gap: 10px;
+//       margin-top: 10px;
+
+//       img {
+//         width: 60px;
+//         height: 60px;
+//         border-radius: 4px;
+//         cursor: pointer;
+//         opacity: 0.6;
+//         transition: opacity 0.3s;
+
+//         &:hover {
+//           opacity: 1;
+//         }
+//       }
+//     }
+//   }
+
+//   /* Narx va ma'lumot */
+//   .price-info {
+//     font-size: 18px;
+//     margin-bottom: 20px;
+
+//     .crossed-price {
+//       text-decoration: line-through;
+//       color: #888;
+//     }
+//   }
+
+//   /* Avtomobil xususiyatlari */
+//   .car-specs {
+//     display: flex;
+//     justify-content: space-around;
+//     margin-bottom: 20px;
+//     font-size: 16px;
+
+//     div {
+//       display: flex;
+//       align-items: center;
+//       gap: 5px;
+
+//       .spec-icon {
+//         color: #f9a825; /* Ikon uchun oltin rang */
+//         font-size: 18px;
+//       }
+//     }
+//   }
+
+//   /* Qo'shimcha ma'lumot */
+//   .car-details {
+//     display: flex;
+//     justify-content: space-around;
+//     font-size: 14px;
+//     margin-bottom: 20px;
+
+//     div {
+//       display: flex;
+//       align-items: center;
+//       gap: 5px;
+
+//       .detail-icon {
+//         color: #f9a825; /* Ikon uchun oltin rang */
+//         font-size: 18px;
+//       }
+//     }
+//   }
+
+//   /* Aloqa tugmalari */
+//   .contact-icons {
+//     display: flex;
+//     justify-content: center;
+//     gap: 15px;
+
+//     .icon {
+//       font-size: 28px;
+//       padding: 10px;
+//       border-radius: 50%;
+//       cursor: pointer;
+//       transition: background-color 0.3s;
+
+//       &.whatsapp {
+//         background-color: #25d366;
+//       }
+
+//       &.telegram {
+//         background-color: #0088cc;
+//       }
+
+//       &.phone {
+//         background-color: #f9a825;
+//       }
+
+//       &:hover {
+//         opacity: 0.8;
+//       }
+//     }
+//   }
+// }
+
