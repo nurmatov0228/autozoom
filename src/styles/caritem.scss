@@ -1,137 +1,257 @@
-// .car-item {
-//   color: #fff;
-//   text-align: center;
-//   background-color: #1e1e1e;
-//   padding: 20px;
-//   border-radius: 8px;
+.caritem {
+  background-color: #191f23;
 
-//   h1 {
-//     font-size: 24px;
-//     margin-bottom: 20px;
-//     font-weight: bold;
-//   }
+  &__container {
+    margin: 50px 0;
+  }
 
-//   /* Slayder */
-//   .car-slider {
-//     position: relative;
-//     margin-bottom: 20px;
+  &__title {
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 50px;
+    font-family: Averta, sans-serif;
+  }
 
-//     .swiper {
-//       width: 100%;
-//       height: 300px;
-//     }
+  &__top {
+    display: flex;
+    align-items: start;
+    gap: 50px;
+    font-family: Averta, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  }
 
-//     .swiper-slide {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       img {
-//         width: 80%;
-//         height: auto;
-//         border-radius: 5px;
-//       }
-//     }
+  &__left {
+    max-width: 600px;
+    min-width: 600px;
 
-//     /* Thumbnail rasmlar */
-//     .thumbnails {
-//       display: flex;
-//       justify-content: center;
-//       gap: 10px;
-//       margin-top: 10px;
+    .swiper-slide img {
+      width: 100%;
+      max-height: 500px;
+      border-radius: 10px;
+    }
 
-//       img {
-//         width: 60px;
-//         height: 60px;
-//         border-radius: 4px;
-//         cursor: pointer;
-//         opacity: 0.6;
-//         transition: opacity 0.3s;
+    .thumbnail-slider {
+      margin-top: 20px;
 
-//         &:hover {
-//           opacity: 1;
-//         }
-//       }
-//     }
-//   }
+      .thumbnail-slide {
+        cursor: pointer;
+        border: 1px solid #e5e7eb !important;
+        width: 33.3%;
 
-//   /* Narx va ma'lumot */
-//   .price-info {
-//     font-size: 18px;
-//     margin-bottom: 20px;
+        img {
+          height: auto;
+          opacity: 0.7;
+          transition: opacity 0.3s;
+          width: 192px;
+          min-height: 160px;
 
-//     .crossed-price {
-//       text-decoration: line-through;
-//       color: #888;
-//     }
-//   }
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
 
-//   /* Avtomobil xususiyatlari */
-//   .car-specs {
-//     display: flex;
-//     justify-content: space-around;
-//     margin-bottom: 20px;
-//     font-size: 16px;
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #007aff; // blue navigation arrow color
+    }
 
-//     div {
-//       display: flex;
-//       align-items: center;
-//       gap: 5px;
+    .swiper-pagination-bullet {
+      background: #007aff; // blue pagination bullet color
+    }
+  }
 
-//       .spec-icon {
-//         color: #f9a825; /* Ikon uchun oltin rang */
-//         font-size: 18px;
-//       }
-//     }
-//   }
+  &__perDay {
+    color: #7d7979;
+    font-weight: 900;
+    margin: 10px 0;
+    font-style: normal;
+    font-size: 16px;
+    text-transform: none;
+  }
 
-//   /* Qo'shimcha ma'lumot */
-//   .car-details {
-//     display: flex;
-//     justify-content: space-around;
-//     font-size: 14px;
-//     margin-bottom: 20px;
+  &__price {
+    color: #fff;
+    text-decoration: line-through;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
 
-//     div {
-//       display: flex;
-//       align-items: center;
-//       gap: 5px;
+  &__deposit {
+    color: gray;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-transform: none;
+  }
 
-//       .detail-icon {
-//         color: #f9a825; /* Ikon uchun oltin rang */
-//         font-size: 18px;
-//       }
-//     }
-//   }
+  &__deposit:nth-child(1) {
+    margin-bottom: 45px;
+    margin-top: 5px;
+  }
 
-//   /* Aloqa tugmalari */
-//   .contact-icons {
-//     display: flex;
-//     justify-content: center;
-//     gap: 15px;
+  &__aed {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 400;
+  }
 
-//     .icon {
-//       font-size: 28px;
-//       padding: 10px;
-//       border-radius: 50%;
-//       cursor: pointer;
-//       transition: background-color 0.3s;
+  &__paymet {
+    color: gray;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
 
-//       &.whatsapp {
-//         background-color: #25d366;
-//       }
+  &__right {
+    width: 50%;
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
 
-//       &.telegram {
-//         background-color: #0088cc;
-//       }
+    &__top {
+      display: flex;
+      gap: 50px;
+    }
+  }
 
-//       &.phone {
-//         background-color: #f9a825;
-//       }
+  &__aedText {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
 
-//       &:hover {
-//         opacity: 0.8;
-//       }
-//     }
-//   }
-// }
+    span {
+      font-size: 1rem;
+      font-weight: 700;
+      color: gray;
+    }
+  }
 
+  &__table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid;
+    padding-top: 20px;
+  }
+
+  &__buttons {
+    width: 280px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 80px;
+    height: 65px;
+    background-color: #adff2f;
+  }
+
+  &__links:nth-child(2) {
+    background-color: #3865e4;
+  }
+
+  &__links:nth-child(3) {
+    background-color: #eabd36;
+  }
+
+  &__bottom {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 80px;
+    font-family: Averta, sans-serif;
+    font-style: normal;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 900;
+  }
+
+  &__subtext {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 35px;
+    color: rgb(161 165 160);
+    margin-bottom: 10px;
+  }
+
+  &__secondtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  &__tourthtitle {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  &__form {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid whitesmoke;
+    gap: 20px;
+    padding: 50px;
+  }
+
+  &__form__input {
+    border: 1px solid whitesmoke;
+    background-color: #485460;
+    height: 65px;
+    padding: 0 10px;
+    color: #fff !important;
+    font-size: 1.2rem;
+  }
+
+  &__form__button {
+    width: 100px !important;
+    height: 50px;
+    border: 1px solid white;
+    background-color: #eb2f06;
+    font-size: 1.2rem;
+    color: #fff;
+
+    &:hover {
+      background-color: #be2300;
+      color: #c4c4c4;
+      cursor: pointer;
+    }
+  }
+}
+
+th {
+  font-size: 1.5rem !important;
+}
+
+tr {
+  .icon {
+    color: rgb(72, 84, 96);
+  }
+}
+
+th,
+td {
+  width: 150px;
+  font-size: 1.2rem !important;
+  text-transform: none;
+}

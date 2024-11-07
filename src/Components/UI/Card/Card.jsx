@@ -5,7 +5,7 @@ const Card = ({ item, location }) => {
   const body = () => {
     if (location === "budget") {
       return (
-        <NavLink to={`/caritem/${item?.id}`} className={"navlink"}>
+        <NavLink to={`/caritem/${item?.id}`} className="navlink">
           <div className="card__container">
             <div className="card__image-wrapper">
               <img
