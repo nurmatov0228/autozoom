@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../styles/cars.scss";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const CarsPage = () => {
   const API = `https://realauto.limsa.uz/api/cars`;
@@ -157,29 +158,31 @@ const CarsPage = () => {
         <div className="filter-cars">
           <div className="all-cars">
             {filteredCars.map((item) => (
-              <div className="filter-cars-card" key={item.id}>
-                <div className="filter-cars-card-top">
-                  <div className="cars-picture">
-                    <img
-                      className="ant-image-img"
-                      src={`https://realauto.limsa.uz/api/uploads/images/${item?.car_images[0]?.image?.src}`}
-                      alt={item?.name_en}
-                      style={{ display: "block" }}
-                    />
+              <NavLink to={`/caritem/${item?.id}`} className={"navlink"}>
+                <div className="filter-cars-card" key={item.id}>
+                  <div className="filter-cars-card-top">
+                    <div className="cars-picture">
+                      <img
+                        className="ant-image-img"
+                        src={`https://realauto.limsa.uz/api/uploads/images/${item?.car_images[0]?.image?.src}`}
+                        alt={item?.name_en}
+                        style={{ display: "block" }}
+                      />
+                    </div>
+                    <h3 className="filter-cars-card-title">
+                      {item?.brand?.title} {item?.model?.name}
+                    </h3>
+                    <h4 className="filter-cars-card-aed">
+                      AED 0 <span className="filter-cars-card-usd">/ $ 0</span>
+                    </h4>
+                    <p className="renta-type">per day: {item?.limitperday}</p>
                   </div>
-                  <h3 className="filter-cars-card-title">
-                    {item?.brand?.title} {item?.model?.name}
-                  </h3>
-                  <h4 className="filter-cars-card-aed">
-                    AED 0 <span className="filter-cars-card-usd">/ $ 0</span>
-                  </h4>
-                  <p className="renta-type">per day: {item?.limitperday}</p>
+                  <div className="filter-cars-card-bottom">
+                    <button className="btn-w">WhatsApp</button>
+                    <button className="btn-t">Telegram</button>
+                  </div>
                 </div>
-                <div className="filter-cars-card-bottom">
-                  <button className="btn-w">WhatsApp</button>
-                  <button className="btn-t">Telegram</button>
-                </div>
-              </div>
+              </NavLink>
             ))}
           </div>
         </div>

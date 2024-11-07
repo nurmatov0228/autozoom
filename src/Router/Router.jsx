@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import CarsPage from "../Pages/Cars";
+import CarItem from "../Pages/CarsItem";
 function Router() {
   return (
     <div>
@@ -12,6 +13,7 @@ function Router() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cars" element={<CarsPage />} />
+        <Route path="/caritem/:id" element={<CarItem />} />
       </Routes>
     </div>
   );
