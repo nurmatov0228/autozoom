@@ -16,6 +16,7 @@ import { IoIosSpeedometer } from "react-icons/io";
 import { CiTimer } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { IoCarSportOutline, IoColorPaletteOutline } from "react-icons/io5";
+import { Bounce, toast } from "react-toastify";
 
 const CarsItem = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -38,8 +39,6 @@ const CarsItem = () => {
   }, []);
 
   const item = base.find((elem) => elem?.id === params);
-  console.log(item);
-
   useEffect(() => {
     if (item) {
       setImages(
@@ -56,11 +55,58 @@ const CarsItem = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", { name, phone, details });
-    // Qo'shimcha submit qilish kodlari shu yerga qo'shilishi mumkin
-    setName("");
-    setPhone("");
-    setDetails("");
+    if (phone.trim().length && details.trim().length && name.trim().length) {
+      const token = `7224174930:AAHfX4xYMCiylsXEZPRrKF395SLBmv3XdcU`;
+      const chat_id = 1308395281;
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+      axios({
+        url: url,
+        method: "post",
+        data: {
+          chat_id: chat_id,
+          text:
+            item?.model?.name +
+            " uchun xabar: Ism: " +
+            name +
+            ", Raqam: " +
+            phone +
+            ", Ma'lumot: " +
+            details,
+        },
+      })
+        .then((data) => {
+          toast.success("Ma'lumotlar jo'natildi", {
+            position: "top-right",
+            autoClose: 1700,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
+        })
+        .catch((error) => {
+          toast.error("Jo'natishda xatolik bor", {
+            position: "top-right",
+            autoClose: 1700,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
+        });
+      setName("");
+      setPhone("");
+      setDetails("");
+    } else {
+      toast.warning("Kiritilgan ma'lumot noto'g'ri");
+    }
   };
 
   return (
@@ -252,7 +298,7 @@ const CarsItem = () => {
                 <a
                   aria-current="page"
                   className="caritem__links active"
-                  href="/cars_info/8df92f41-b98f-4dec-b48f-28ed1f5c5e0e"
+                  href="https://web.whatsapp.com/"
                   style={{ color: "white", fontSize: "2rem" }}
                 >
                   <FaWhatsapp style={{ color: "white", fontSize: "2rem" }} />
@@ -260,7 +306,7 @@ const CarsItem = () => {
                 <a
                   aria-current="page"
                   className="caritem__links active"
-                  href="/cars_info/8df92f41-b98f-4dec-b48f-28ed1f5c5e0e"
+                  href="https://t.me/s/Uzb_malibu"
                   style={{ color: "white", fontSize: "2rem" }}
                 >
                   <FaTelegram style={{ color: "white", fontSize: "2rem" }} />
@@ -268,7 +314,7 @@ const CarsItem = () => {
                 <a
                   aria-current="page"
                   className="caritem__links active"
-                  href="/cars_info/8df92f41-b98f-4dec-b48f-28ed1f5c5e0e"
+                  href="https://chevrolet.uz/malibu-xl"
                   style={{ color: "white", fontSize: "2rem" }}
                 >
                   <BsTelephoneFill
@@ -304,7 +350,7 @@ const CarsItem = () => {
                   />
                   <input
                     className="caritem__form__input"
-                    type="tel"
+                    type="number"
                     placeholder="Phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
