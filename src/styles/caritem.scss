@@ -18,6 +18,22 @@
     font-family: Averta, sans-serif;
     font-style: normal;
     font-weight: 400;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      margin: 0 auto;
+      align-items: center;
+
+      .caritem__right__bottom {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+
+        @media (max-width: 644px) {
+          flex-direction: column;
+        }
+      }
+    }
   }
 
   &__left {
@@ -38,6 +54,10 @@
 
     .swiper-wrapper {
       gap: 15px !important;
+
+      @media (max-width: 1024px) {
+        width: auto !important;
+      }
     }
 
     .thumbnail-slider {
@@ -47,6 +67,10 @@
         width: 190px !important;
         height: auto !important;
         margin: 0 !important;
+
+        @media (max-width: 1024px) {
+          width: 30% !important;
+        }
       }
 
       .thumbnail-slide {
@@ -59,7 +83,6 @@
           opacity: 0.7;
           transition: opacity 0.3s;
           width: 100%;
-          // min-height: 160px;
 
           &:hover {
             opacity: 1;
@@ -127,9 +150,17 @@
     font-weight: 700;
     text-transform: uppercase;
 
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+
     &__top {
       display: flex;
       gap: 50px;
+
+      @media (max-width: 1024px) {
+        justify-content: space-around;
+      }
     }
   }
 
@@ -162,6 +193,12 @@
     display: flex;
     align-items: center;
     gap: 30px;
+
+    @media (max-width: 768px) {
+      align-items: center;
+      margin: 30px auto;
+      justify-content: space-between;
+    }
   }
 
   &__links {
@@ -172,6 +209,22 @@
     width: 80px;
     height: 65px;
     background-color: #adff2f;
+
+    // Responsive o'lchamlar
+    @media (max-width: 1200px) {
+      width: 70px;
+      height: 55px;
+    }
+
+    @media (max-width: 768px) {
+      width: 60px;
+      height: 50px;
+    }
+
+    @media (max-width: 480px) {
+      width: 50px;
+      height: 45px;
+    }
   }
 
   &__links:nth-child(2) {
@@ -267,4 +320,158 @@ td {
   width: 150px;
   font-size: 1.2rem !important;
   text-transform: none;
+}
+
+// Responsive styles only
+@media (max-width: 1200px) {
+  .caritem__title {
+    font-size: 2.5rem;
+  }
+
+  .caritem__subtitle {
+    font-size: 1.8rem;
+  }
+
+  .caritem__secondtitle,
+  .caritem__tourthtitle,
+  .caritem__price,
+  .caritem__aed,
+  .caritem__aedText {
+    font-size: 1.1rem;
+  }
+
+  .caritem__left {
+    max-width: 500px;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      max-width: 550px;
+    }
+
+    .swiper-slide img {
+      max-height: 500px;
+    }
+  }
+
+  .caritem__form__input {
+    height: 55px;
+    font-size: 1.1rem;
+  }
+
+  .caritem__form__button {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .caritem__title {
+    font-size: 2rem;
+  }
+
+  .caritem__subtitle {
+    font-size: 1.6rem;
+  }
+
+  .caritem__secondtitle,
+  .caritem__tourthtitle,
+  .caritem__price,
+  .caritem__aed,
+  .caritem__aedText {
+    font-size: 1rem;
+  }
+
+  .caritem__left {
+    max-width: 400px;
+
+    .swiper-slide img {
+      max-height: 300px;
+    }
+  }
+
+  .caritem__form__input {
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .caritem__form__button {
+    font-size: 1rem;
+  }
+
+  .caritem__bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .caritem__title {
+    font-size: 1.5rem;
+  }
+
+  .caritem__right__top {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+
+    .caritem__deposit {
+      margin: 0;
+    }
+
+    .caritem__box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .caritem__subtitle {
+    font-size: 1.4rem;
+  }
+
+  .caritem__bottom-left {
+    text-align: center;
+  }
+
+  .caritem__secondtitle,
+  .caritem__tourthtitle,
+  .caritem__price,
+  .caritem__aed,
+  .caritem__aedText {
+    font-size: 0.9rem;
+  }
+
+  .caritem__left {
+    max-width: 100%;
+  }
+
+  .caritem__form {
+    width: 300px;
+    padding: 30px;
+    margin: 10px auto 0 !important;
+  }
+
+  .caritem__form__input {
+    height: 45px;
+    font-size: 0.9rem;
+    width: 80%;
+  }
+
+  .caritem__form__button {
+    font-size: 0.9rem;
+    width: 80%;
+    height: 40px;
+  }
+}
+
+th,
+td {
+  font-size: 1.2rem !important;
+
+  @media (max-width: 768px) {
+    font-size: 1rem !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem !important;
+  }
 }
