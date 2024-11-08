@@ -1,25 +1,32 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../styles/cars.scss";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
+import { FaTelegram, FaWhatsapp } from "react-icons/fa";
 
 const CarsPage = () => {
   const API = `https://realauto.limsa.uz/api/cars`;
-  const [base, setBase] = useState([]); // Barcha mashinalarni saqlaydi
-  const [model, setModel] = useState(""); // Tanlangan model ID sini saqlaydi
-  const [filteredCars, setFilteredCars] = useState([]); // Filtrlash natijasida ko'rinadigan mashinalarni saqlaydi
+  const [base, setBase] = useState([]);
+  const [model, setModel] = useState("");
+  const [filteredCars, setFilteredCars] = useState([]);
+  const [loading, setLoading] = useState(true); // Yuklanish holati
+  const [error, setError] = useState(null); // Xatolik holati
 
-  // useRef yordamida barcha checkboxlarni olish uchun massiv yaratamiz
   const carTypeRefs = useRef([]);
   const brandRefs = useRef([]);
 
-  // API'dan ma'lumot olish funksiyasi
   const fetchData = async () => {
+    setLoading(true); // Ma'lumot yuklanayotganini bildirish
+    setError(null); // Xatolikni tozalash
     try {
       const response = await axios.get(API);
       setBase(response?.data?.data || []);
-      setFilteredCars(response?.data?.data || []); // Boshlang'ich qiymat sifatida barcha mashinalarni o'rnatadi
+      setFilteredCars(response?.data?.data || []);
     } catch (error) {
+      setError("Ma'lumotlarni olishda xatolik yuz berdi.");
       console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false); // Yuklanish tugadi
     }
   };
 
@@ -27,22 +34,18 @@ const CarsPage = () => {
     fetchData();
   }, []);
 
-  // Model tanlovini boshqaruvchi funksiya
   const handleModelChange = (event) => {
     setModel(event.target.value);
   };
 
-  // Filtrlash funksiyasi
   const handleApplyFilter = (event) => {
     event.preventDefault();
     let filtered = base;
 
-    // Modelni filtrlang
     if (model) {
       filtered = filtered.filter((item) => item?.model?.id === model);
     }
 
-    // Tanlangan kategoriyalar va brendlar bo'yicha filtrlang
     const selectedCategories = carTypeRefs.current
       .filter((input) => input.checked)
       .map((input) => input.value);
@@ -65,17 +68,13 @@ const CarsPage = () => {
     setFilteredCars(filtered);
   };
 
-  // Reset funksiyasi
   const handleResetFilter = () => {
     setModel("");
-    setFilteredCars(base); // Barcha mashinalarni qayta yuklaydi
-
-    // Barcha carType va brand checkboxlarini qayta tiklash
+    setFilteredCars(base);
     carTypeRefs.current.forEach((input) => (input.checked = false));
     brandRefs.current.forEach((input) => (input.checked = false));
   };
 
-  // Unikal tur va brendlarni olish
   const uniqueCategories = [
     ...new Set(base.map((item) => item?.category?.name_en)),
   ];
@@ -156,31 +155,52 @@ const CarsPage = () => {
         </aside>
         <div className="filter-cars">
           <div className="all-cars">
-            {filteredCars.map((item) => (
-              <div className="filter-cars-card" key={item.id}>
-                <div className="filter-cars-card-top">
-                  <div className="cars-picture">
-                    <img
-                      className="ant-image-img"
-                      src={`https://realauto.limsa.uz/api/uploads/images/${item?.car_images[0]?.image?.src}`}
-                      alt={item?.name_en}
-                      style={{ display: "block" }}
-                    />
+            {loading ? (
+              <p className="loading">Loading...</p>
+            ) : error ? (
+              <p className="error-message">{error}</p>
+            ) : filteredCars.length > 0 ? (
+              filteredCars.map((item) => (
+                <NavLink
+                  to={`/caritem/${item?.id}`}
+                  className="navlink"
+                  key={item.id}
+                >
+                  <div className="filter-cars-card">
+                    <div className="filter-cars-card-top">
+                      <div className="cars-picture">
+                        <img
+                          className="ant-image-img"
+                          src={`https://realauto.limsa.uz/api/uploads/images/${item?.car_images[0]?.image?.src}`}
+                          alt={item?.name_en}
+                          style={{ display: "block" }}
+                        />
+                      </div>
+                      <h3 className="filter-cars-card-title">
+                        {item?.brand?.title} {item?.model?.name}
+                      </h3>
+                      <h4 className="filter-cars-card-aed">
+                        AED 0{" "}
+                        <span className="filter-cars-card-usd">/ $ 0</span>
+                      </h4>
+                      <p className="renta-type">per day: {item?.limitperday}</p>
+                    </div>
+                    <div className="filter-cars-card-bottom">
+                      <button className="btn-w">
+                        <FaWhatsapp />
+                        WhatsApp
+                      </button>
+                      <button className="btn-t">
+                        <FaTelegram />
+                        Telegram
+                      </button>
+                    </div>
                   </div>
-                  <h3 className="filter-cars-card-title">
-                    {item?.brand?.title} {item?.model?.name}
-                  </h3>
-                  <h4 className="filter-cars-card-aed">
-                    AED 0 <span className="filter-cars-card-usd">/ $ 0</span>
-                  </h4>
-                  <p className="renta-type">per day: {item?.limitperday}</p>
-                </div>
-                <div className="filter-cars-card-bottom">
-                  <button className="btn-w">WhatsApp</button>
-                  <button className="btn-t">Telegram</button>
-                </div>
-              </div>
-            ))}
+                </NavLink>
+              ))
+            ) : (
+              <p className="empty">Mashinalar topilmadi</p>
+            )}
           </div>
         </div>
       </div>
