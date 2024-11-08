@@ -9,6 +9,7 @@ import Blog from "../Pages/Blog";
 import BlogView2 from "../Pages/BlogView2";
 import BlogView3 from "../Pages/BlogView3";
 import BlogVew1 from "../Pages/BlogView1";
+import CarItem from "../Pages/CarsItem";
 function Router() {
   return (
     <div>
@@ -22,6 +23,7 @@ function Router() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/cars" element={<CarsPage />} />
+        <Route path="/caritem/:id" element={<CarItem />} />
       </Routes>
     </div>
   );

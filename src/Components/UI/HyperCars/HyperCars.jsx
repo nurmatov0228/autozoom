@@ -33,7 +33,7 @@ const BudgetCars = () => {
         <div className="budget__container">
           <div className="budget__header">
             <h1>Hyper Cars Rental Emirates</h1>
-            <NavLink to="/avto" className="btnRuB">
+            <NavLink to="/cars" className="btnRuB">
               <p>SEE ALL</p>
               <svg
                 className="imgbtn"
