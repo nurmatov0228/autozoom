@@ -1,0 +1,106 @@
+.budget {
+  background-color: #272933;
+  color: #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 50px 0;
+  min-height: 577.6px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+
+    @media (max-width: 480px) {
+      gap: 25px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      font-family: Averta, sans-serif;
+      color: #fff;
+      text-transform: uppercase;
+
+      @media (max-width: 1024px) {
+        font-size: 1.8rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .btnRuB {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #fff;
+    transition: all 0.2s ease;
+    fill: #fff;
+    stroke: #fff;
+    font-family: Averta, sans-serif;
+
+    @media (max-width: 480px) {
+      font-size: 10px;
+      gap: 5px;
+      min-width: 68.89px;
+    }
+
+    &:hover {
+      color: #ea0029;
+      fill: #ea0029;
+      stroke: #ea0029;
+    }
+
+    &:hover .imgbtn {
+      margin-left: 15px;
+
+      @media (max-width: 480px) {
+        margin-left: 5px;
+      }
+    }
+
+    &:hover .path {
+      fill: #ea0029;
+    }
+  }
+
+  .imgbtn {
+    transition: all 0.3s ease;
+
+    @media (min-width: 992px) {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__cards {
+    margin-top: 20px;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+.swiper-wrapper {
+  gap: 10px !important;
+  box-sizing: border-box !important;
+}
+
+.swiper-slide {
+  width: 300px !important;
+  height: 400px !important;
+}

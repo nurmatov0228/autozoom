@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Merriweather", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 90%;
+
+  @media (max-width: 1200px) {
+    max-width: 1000px;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 750px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.navlink {
+  color: #fff;
+  background-color: none !important;
+}
