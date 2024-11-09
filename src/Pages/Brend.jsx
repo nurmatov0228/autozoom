@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
 const Brend = () => {
   return (
-    <div>Brend</div>
-  )
-}
+    <div className="brend">
+      <div className="container">
+        <div className="brend_container">
+          <div className="brend_title">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Brend
+export default Brend;
