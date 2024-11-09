@@ -44,7 +44,10 @@ const Navbar = () => {
               </NavLink>
               <div className="dropdown-menu">
                 <div className="dropdown-column">
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/f2532afc-d743-4153-b6a7-f24af25d2b9d"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -53,7 +56,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">Nissan</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/7430fb57-0757-4677-aeaf-6277fd3a9e62"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -73,7 +79,10 @@ const Navbar = () => {
                   </NavLink>
                 </div>
                 <div className="dropdown-column">
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/8df92f41-b98f-4dec-b48f-28ed1f5c5e0e"
+                    className="dropdown-item"
+                  >
                     <img
                       width={35}
                       height={25}
@@ -82,7 +91,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">Chevrolet</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/da85a7a4-28f8-4645-b07f-234e6a943bb9"
+                    className="dropdown-item"
+                  >
                     <img
                       width={30}
                       height={25}
@@ -91,7 +103,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">Toyota</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/81837496-ad0b-4ab8-9dc4-3da5f94c543c"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -103,7 +118,10 @@ const Navbar = () => {
                   </NavLink>
                 </div>
                 <div className="dropdown-column">
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/888e39e8-200d-49f3-97ed-f74f83eb1007"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -112,7 +130,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">Tesla</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/c53f688c-29e3-47d5-b904-a0ec8300cc6a"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={20}
@@ -121,7 +142,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">Hummer</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/690d01e3-99fb-4fc0-baf1-ca860b767c87"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -133,7 +157,10 @@ const Navbar = () => {
                   </NavLink>
                 </div>
                 <div className="dropdown-column">
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/38ed58e0-ea5e-4def-9179-7a624470ec56"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -142,7 +169,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">Cadillac</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/4041ea3e-07d7-499a-804a-8a7bd13857e4"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -151,7 +181,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">Ferrari</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/f4691810-8485-468f-bca3-ef9f6d31fa69"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -163,7 +196,10 @@ const Navbar = () => {
                   </NavLink>
                 </div>
                 <div className="dropdown-column">
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/fcd08d50-bf38-4394-9a9a-5806c2afbf7c"
+                    className="dropdown-item"
+                  >
                     <img
                       width={30}
                       height={30}
@@ -172,7 +208,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">Mustang</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/970c9bbe-8e3a-4f25-8588-a195e74961c9"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -181,7 +220,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">Koenigsegg</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/05af6347-adda-44f2-a127-76361f5ef7e9"
+                    className="dropdown-item"
+                  >
                     <img
                       width={25}
                       height={25}
@@ -192,7 +234,10 @@ const Navbar = () => {
                   </NavLink>
                 </div>
                 <div className="dropdown-column">
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/888e39e8-200d-49f3-97ed-f74f83eb1007"
+                    className="dropdown-item"
+                  >
                     <img width={25} height={25} src={rasmCar} alt="Car Icon" />
                     Rent <span className="brand-name">Tesla</span> Emirates
                   </NavLink>
@@ -205,7 +250,10 @@ const Navbar = () => {
                     />
                     Rent <span className="brand-name">McLaren</span> Emirates
                   </NavLink>
-                  <NavLink to="/cars" className="dropdown-item">
+                  <NavLink
+                    to="/cars/29380562-19cc-4964-98ec-9f513f29db67"
+                    className="dropdown-item"
+                  >
                     <img
                       width={35}
                       height={25}

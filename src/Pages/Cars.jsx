@@ -27,15 +27,9 @@ const CarsPage = () => {
         const selecCategories = response?.data?.data.filter(
           (e) => e?.id === params?.id
         );
-
-        console.log(response?.data?.data);
-
         const newbase = response?.data?.data.filter(
           (e) => e?.category?.name_en == selecCategories[0]?.category?.name_en
         );
-
-        console.log(newbase);
-
         setFilteredCars(newbase);
       } else if (params?.id === undefined) {
         setFilteredCars(response?.data?.data);
@@ -85,7 +79,6 @@ const CarsPage = () => {
 
     setFilteredCars(filtered);
   };
-
   const handleResetFilter = () => {
     setModel("");
     setFilteredCars(base);
