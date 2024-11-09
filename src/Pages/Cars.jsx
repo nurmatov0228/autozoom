@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../styles/cars.scss";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { FaTelegram, FaWhatsapp } from "react-icons/fa";
 
 const CarsPage = () => {
@@ -11,6 +11,7 @@ const CarsPage = () => {
   const [filteredCars, setFilteredCars] = useState([]);
   const [loading, setLoading] = useState(true); // Yuklanish holati
   const [error, setError] = useState(null); // Xatolik holati
+  const params = useParams();
 
   const carTypeRefs = useRef([]);
   const brandRefs = useRef([]);
@@ -21,7 +22,24 @@ const CarsPage = () => {
     try {
       const response = await axios.get(API);
       setBase(response?.data?.data || []);
-      setFilteredCars(response?.data?.data || []);
+
+      if (params?.id) {
+        const selecCategories = response?.data?.data.filter(
+          (e) => e?.id === params?.id
+        );
+
+        console.log(response?.data?.data);
+
+        const newbase = response?.data?.data.filter(
+          (e) => e?.category?.name_en == selecCategories[0]?.category?.name_en
+        );
+
+        console.log(newbase);
+
+        setFilteredCars(newbase);
+      } else if (params?.id === undefined) {
+        setFilteredCars(response?.data?.data);
+      }
     } catch (error) {
       setError("Ma'lumotlarni olishda xatolik yuz berdi.");
       console.error("Error fetching data:", error);
