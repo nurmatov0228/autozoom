@@ -1,5 +1,19 @@
+.loadercomponent {
+  background-color: #1e1f27;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.loader__container {
+  width: 230px;
+  display: flex;
+  justify-content: space-between;
+}
 .loader {
-  --path: #2f3545;
+  --path: #baccff;
   --dot: #5628ee;
   --duration: 3s;
   width: 44px;
@@ -146,7 +160,8 @@
   -webkit-font-smoothing: antialiased; // Center & dribbble
   min-height: 100vh;
   width: 100%;
-  background: #f5f9ff;
+  background: #002b63;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
