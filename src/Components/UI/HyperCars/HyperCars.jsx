@@ -33,7 +33,7 @@ const BudgetCars = () => {
         <div className="budget__container">
           <div className="budget__header">
             <h1>Hyper Cars Rental Emirates</h1>
-            <NavLink to="/avto" className="btnRuB">
+            <NavLink to={`/cars/${sportCars[0]?.id}`} className="btnRuB">
               <p>SEE ALL</p>
               <svg
                 className="imgbtn"
