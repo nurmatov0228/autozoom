@@ -1,0 +1,108 @@
+.navbar {
+    background-color: rgb(48, 45, 54);
+    padding: 20px 0;
+    background: linear-gradient(270deg,rgb(48, 45, 54), rgb(48, 45, 54), hsl(352, 71%, 15%),rgb(48, 45, 54),rgb(48, 45, 54), );
+    background-size: 450% 450%;
+    animation: gradientAnimation 8s ease-in-out infinite,  boxShadowAnimation 4s ease infinite;
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes boxShadowAnimation {
+        0% {
+          box-shadow: 0 0 10px rgb(48, 45, 54), 0 0 20px rgba(63, 32, 167, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(86, 27, 5, 0.6), 0 0 30px rgba(23, 7, 146, 0.6);
+        }
+        100% {
+          box-shadow: 0 0 10px rgba(7, 7, 7, 0.2), 0 0 20px rgba(123, 12, 12, 0.2);
+        }
+      }
+      
+    &_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    &_languages {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+  
+    &_search {
+      &_input {
+        position: relative;
+      }
+  
+      input {
+        color: white;
+        width: 400px;
+        height: 50px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        padding: 0 50px;
+        font-size: 20px;
+        background: rgb(137, 137, 137);
+        background: linear-gradient(90deg, rgb(71, 71, 71) 29%, rgb(48, 45, 54) 100%);
+      }
+    }
+  
+    &_icon {
+      color: white;
+      position: absolute;
+      margin-top: 23px;
+      margin-left: 10px;
+      transform: translateY(-50%);
+      font-size: 24px;
+      cursor: pointer;
+    }
+  
+    &_navlink {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 600px;
+  
+      a {
+        color: rgb(255, 255, 255);
+        font-size: 15px;
+        position: relative;
+        padding-bottom: 1px;
+  
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0%;
+          height: 2px;
+          background-color: rgb(177, 46, 46);
+          transition: width 0.3s ease; 
+        }
+  
+        &:hover::after {
+          width: 100%; 
+        }
+        &.active {
+          color: #eb0e0e; /* Aktiv link rangini qizilga o'zgartirish */
+          font-weight: bold; /* Bold qilish */
+          padding-bottom: 5px; /* Pastki bo‘shliq */
+        }
+      }
+    }
+    &_phon {
+      color: rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      font-size: 15px;
+    }
+  }
+  
