@@ -6,6 +6,9 @@ import HyperCars from "../Components/UI/HyperCars/HyperCars";
 import LuxuryCars from "../Components/UI/LuxuryCars/LuxuryCars";
 import SuvCars from "../Components/UI/SuvCars/SuvCars";
 import CabrioletCars from "../Components/UI/CabrioletCars/CabrioletCars";
+import Services from "../Components/UI/Services/Services";
+import Rental from "../Components/UI/Rental/Rental";
+import InstaImages from "../Components/UI/InstaImages/InstaImages";
 
 const Home = () => {
   return (
@@ -16,6 +19,9 @@ const Home = () => {
       <LuxuryCars />
       <SuvCars />
       <CabrioletCars />
+      <Services />
+      <Rental />
+      <InstaImages />
     </div>
   );
 };
