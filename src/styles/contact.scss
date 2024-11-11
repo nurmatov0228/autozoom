@@ -28,12 +28,6 @@
       }
     }
   }
-  &__title {
-    font-size: 38px;
-    color: #f5f5f5;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-  }
   &__description {
     font-size: 17px;
     color: #888;
@@ -111,4 +105,10 @@
   100% {
     background-position: 0% 50%;
   }
+}
+.contact__title {
+  font-size: 38px;
+  color: #f5f5f5;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
 }
