@@ -146,7 +146,6 @@
     padding: 30px 20px;
     gap: 30px;
     width: 100%;
-    justify-content: space-around;
     @media (max-width: 700px) {
       width: 100%;
       justify-content: space-around;
@@ -176,6 +175,16 @@
     padding: 10px;
     width: 290px;
     position: relative;
+
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(
+        161.55deg,
+        #ffffff4b -9.06%,
+        #11121997 39.4%,
+        #111219
+      );
+    }
 
     .filter-cars-card-top {
       cursor: pointer;

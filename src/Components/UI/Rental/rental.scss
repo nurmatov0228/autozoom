@@ -1,0 +1,75 @@
+.rental {
+  width: 100%;
+  font-family: Averta, sans-serif;
+  background: #111218f3;
+  background-image: url(../../../assets/halifa.png);
+  background-repeat: no-repeat;
+  background-position: 950px center;
+  background-size: 440px;
+  &__wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+  }
+  &__box {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    h2 {
+      font-weight: 400;
+      margin-bottom: -20px;
+    }
+  }
+  &__text {
+    font-size: 20px;
+    color: #f5f5f5;
+    line-height: 26px;
+    letter-spacing: 1.9px;
+  }
+  &__link {
+    font-size: 20px;
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &:hover {
+      animation: link 0.4s ease both;
+      .rental__icon {
+        .rental__path,
+        .circle {
+          animation: link 0.4s ease both;
+        }
+        transition: transform 0.4s ease;
+        transform: translate(12px);
+      }
+    }
+  }
+  &__icon {
+    margin-top: 16px;
+    width: 50px;
+    height: 50px;
+    .circle {
+      fill: none;
+      stroke: #fff;
+      stroke-width: 1px;
+    }
+    .rental__path {
+      fill: #fff;
+    }
+  }
+}
+@keyframes link {
+  0% {
+    color: #f5f5f5;
+    stroke: #fff;
+  }
+  100% {
+    stroke: #aa1515;
+    color: #aa1515;
+  }
+}

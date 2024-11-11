@@ -2,16 +2,29 @@
   font-family: "Averta", sans-serif;
   background-color: rgb(48, 45, 54);
   padding: 20px 0;
-  background: linear-gradient(270deg, rgb(48, 45, 54), rgb(48, 45, 54), hsl(352, 71%, 15%), rgb(48, 45, 54), rgb(48, 45, 54));
+  background: linear-gradient(
+    270deg,
+    rgb(48, 45, 54),
+    rgb(48, 45, 54),
+    hsl(352, 71%, 15%),
+    rgb(48, 45, 54),
+    rgb(48, 45, 54)
+  );
   background-size: 450% 450%;
   animation: gradientAnimation 8s ease-in-out infinite, boxShadowAnimation 4s ease infinite;
   position: relative;
   z-index: 999;
 
   @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   @keyframes boxShadowAnimation {
@@ -81,7 +94,7 @@
       padding-bottom: 1px;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -131,7 +144,6 @@
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Har qatorda 3 ta element */
     column-gap: 20px; /* Elementlar orasidagi bo'shliq */
