@@ -347,6 +347,7 @@ const CarsItem = () => {
                     placeholder="Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    required
                   />
                   <input
                     className="caritem__form__input"
@@ -354,6 +355,7 @@ const CarsItem = () => {
                     placeholder="Phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    required
                   />
                   <input
                     className="caritem__form__input"
@@ -361,11 +363,13 @@ const CarsItem = () => {
                     placeholder="Details"
                     value={details}
                     onChange={(e) => setDetails(e.target.value)}
+                    required
                   />
                   <input
                     className="caritem__form__button"
                     type="submit"
                     value="Send"
+                    required
                   />
                 </form>
               </div>
