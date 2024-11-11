@@ -82,10 +82,13 @@
   &__icon {
     font-size: 24px;
   }
-  hr {
+  &__hr {
     height: 3px;
     border: none;
-    animation: rainbow 10s linear infinite;
+    background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: rainbow 8s ease infinite;
+    transform: translateZ(0);
   }
   &__map {
     width: 100%;
@@ -100,24 +103,12 @@
 }
 @keyframes rainbow {
   0% {
-    background-color: red;
-  }
-  16% {
-    background-color: orange;
-  }
-  33% {
-    background-color: yellow;
+    background-position: 0% 50%;
   }
   50% {
-    background-color: green;
-  }
-  66% {
-    background-color: blue;
-  }
-  83% {
-    background-color: purple;
+    background-position: 100% 50%;
   }
   100% {
-    background-color: red;
+    background-position: 0% 50%;
   }
 }
