@@ -10,21 +10,23 @@ import BlogView2 from "../Pages/BlogView2";
 import BlogView3 from "../Pages/BlogView3";
 import BlogVew1 from "../Pages/BlogView1";
 import CarItem from "../Pages/CarsItem";
+import Services from "../Components/UI/Services/Services";
 function Router() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blogview1" element={<BlogVew1 />} />
-        <Route path="/blogview2" element={<BlogView2/>} />
+        <Route path="/blogview2" element={<BlogView2 />} />
         <Route path="/blogview3" element={<BlogView3 />} />
-        <Route path="/brand" element={<Brend/>}/>
+        <Route path="/brand" element={<Brend />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/blog" element={<Blog />} />
         <Route path="/cars" element={<CarsPage />} />
         <Route path="/cars/:id" element={<CarsPage />} />
         <Route path="/caritem/:id" element={<CarItem />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
     </div>
   );

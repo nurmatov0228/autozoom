@@ -79,7 +79,7 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-            <hr />
+            <hr className="contact__hr" />
             <div className="contact__map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14458.951170983506!2d55.218642!3d25.042971!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6dda73765d53%3A0x97a75a7af7de0788!2sDubai%20International%20Cricket%20Stadium!5e0!3m2!1sen!2sus!4v1730722726460!5m2!1sen!2sus"
