@@ -1,0 +1,20 @@
+{
+  "CARS": "CARS",
+  "BRAND": "BRAND",
+  "SERVICES": "SERVICES",
+  "ABOUT_US": "ABOUT US",
+  "CONTACT": "CONTACT",
+  "BLOG": "BLOG",
+  "searchPlaceholder": "Search...",
+    "BUDGET_CARS_HEADER": "Budget Cars Rental Emirates",
+    "SEE_ALL": "SEE ALL",
+    "CABRIOLET_CARS_HEADER": "Cabriolet Cars Rental Emirates",
+    "PER_DAY": "per day:",
+  "NOT_FOUND": "not found",
+  "hyperCarsRental": "Hyper Cars Rental Emirates",
+  "seeAll": "SEE ALL",
+  "sportsCarsRental": "Sports cars Rental Emirates",
+  "luxuryCarsRental": "Luxury Cars Rental Emirates",
+   "suvCarsRental": "Suv Cars Rental Emirates"
+  
+}
