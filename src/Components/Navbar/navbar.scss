@@ -11,10 +11,10 @@
     rgb(48, 45, 54)
   );
   background-size: 450% 450%;
-  animation: gradientAnimation 8s ease-in-out infinite,
-    boxShadowAnimation 4s ease infinite;
+  animation: gradientAnimation 8s ease-in-out infinite, boxShadowAnimation 4s ease infinite;
   position: relative;
   z-index: 999;
+
   @keyframes gradientAnimation {
     0% {
       background-position: 0% 50%;
@@ -67,11 +67,7 @@
       padding: 0 50px;
       font-size: 20px;
       background: rgb(137, 137, 137);
-      background: linear-gradient(
-        90deg,
-        rgb(71, 71, 71) 29%,
-        rgb(48, 45, 54) 100%
-      );
+      background: linear-gradient(90deg, rgb(71, 71, 71) 29%, rgb(48, 45, 54) 100%);
     }
   }
 
@@ -111,6 +107,7 @@
       &:hover::after {
         width: 100%;
       }
+
       &.active {
         color: #eb0e0e; /* Aktiv link rangini qizilga o'zgartirish */
         font-weight: bold; /* Bold qilish */
@@ -118,6 +115,7 @@
       }
     }
   }
+
   &_phon {
     color: rgb(255, 255, 255);
     display: flex;
@@ -133,6 +131,7 @@
 
   .dropdown-menu {
     width: 800px;
+    display: none;
     position: absolute;
     top: 100%;
     left: -400px;
@@ -142,13 +141,13 @@
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
     gap: 25px;
     z-index: 10;
+    opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // Har qatorda 3 ta element
-    column-gap: 20px; // Elementlar orasidagi bo'shliq
-    row-gap: 15px; // Qatorlar orasidagi bo'shliq
+    grid-template-columns: repeat(3, 1fr); /* Har qatorda 3 ta element */
+    column-gap: 20px; /* Elementlar orasidagi bo'shliq */
+    row-gap: 15px; /* Qatorlar orasidagi bo'shliq */
 
     .dropdown-column {
       display: flex;
@@ -165,6 +164,7 @@
         gap: 15px;
         align-items: center;
         margin-top: 50px;
+
         &:hover {
           color: #00eaff;
           transform: translateX(5px);
@@ -174,6 +174,8 @@
   }
 
   &:hover .dropdown-menu {
+    display: grid;
+    opacity: 1;
     transform: translateY(0);
   }
 }

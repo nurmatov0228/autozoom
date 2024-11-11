@@ -5,8 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // i18n qo'shildi
 
 const BudgetCars = () => {
+  const { t } = useTranslation(); // t funksiyasini olish
   const API = `https://realauto.limsa.uz/api/cars`;
   const [base, setBase] = useState([]);
 
@@ -32,9 +34,9 @@ const BudgetCars = () => {
       <div className="container">
         <div className="budget__container">
           <div className="budget__header">
-            <h1>Hyper Cars Rental Emirates</h1>
+            <h1>{t('hyperCarsRental')}</h1> {/* Tarjima qo'shildi */}
             <NavLink to={`/cars/${sportCars[0]?.id}`} className="btnRuB">
-              <p>SEE ALL</p>
+              <p>{t('seeAll')}</p> {/* Tarjima qo'shildi */}
               <svg
                 className="imgbtn"
                 width="32"
@@ -60,8 +62,8 @@ const BudgetCars = () => {
             }}
           >
             {sportCars.map((item) => (
-              <SwiperSlide>
-                <Card key={item.id} item={item} location={"budget"} />
+              <SwiperSlide key={item.id}>
+                <Card item={item} location={"budget"} />
               </SwiperSlide>
             ))}
           </Swiper>

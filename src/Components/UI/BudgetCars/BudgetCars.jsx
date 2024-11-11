@@ -6,10 +6,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // Import useTranslation hook for translations
 
 const BudgetCars = () => {
   const API = `https://realauto.limsa.uz/api/cars`;
   const [base, setBase] = useState([]);
+  const { t } = useTranslation(); // useTranslation hook
 
   const fetchData = async () => {
     try {
@@ -33,9 +35,9 @@ const BudgetCars = () => {
       <div className="container">
         <div className="budget__container">
           <div className="budget__header">
-            <h1>Budget Cars Rental Emirates</h1>
+            <h1>{t("BUDGET_CARS_HEADER")}</h1> {/* Translated Header */}
             <NavLink to={`/cars/${budgetCars[0]?.id}`} className="btnRuB">
-              <p>SEE ALL</p>
+              <p>{t("SEE_ALL")}</p> {/* Translated Button Text */}
               <svg
                 className="imgbtn"
                 width="32"
