@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import './rental.scss'
+import { useTranslation } from "react-i18next"; // Import i18next
+import './rental.scss';
+
 const Rental = () => {
+  const { t } = useTranslation(); // Hook to access translation
+
   return (
     <div className="rental">
       <div className="about__container">
@@ -11,26 +15,20 @@ const Rental = () => {
             height="500"
             src="https://www.youtube.com/embed/rsHmvxJ86PA"
             title="Terra-rentacar"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
           <div className="rental__box">
             <h2 className="contact__title rental__title">
-              SPORTS CAR RENTAL DUBAI
+              {t("sportsCarRentalDubai")}
             </h2>
             <p className="rental__text">
-              Terra L L C a Car is a Top Luxury Car Rental Dubai based company,
-              We offer sports car rental, and supercar rental in Dubai. The best
-              luxury car rental process provided by our fleet . We own a diverse
-              range of luxury supercar rental and sports car rental Dubai style
-              , including Rolls Royce, Lamborghini, Maserati, Ferrari, Mercedes
-              Benz, Porsche, and Range Rover, to name a few. Rent a car with the
-              best car rental company in Dubai.
+              {t("rentalDescription")}
             </p>
             <NavLink to="/cars" className="rental__link">
-              <p>ALL CARS</p>
+              <p>{t("allCars")}</p>
               <svg
                 className="rental__icon"
                 width="50"

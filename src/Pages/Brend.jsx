@@ -5,8 +5,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../styles/brand.scss";
 import { Pagination, Navigation } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
 const Brend = () => {
+  const { t } = useTranslation();
   const brands = [
     {
       imgSrc:
@@ -74,7 +76,7 @@ const Brend = () => {
     <div className="brend">
       <div className="container">
         <div className="brend_container">
-          <h2 className="brend_title">BRANDS</h2>
+          <h2 className="brend_title">{t("brend")}</h2>
           <Swiper
             slidesPerView={4}
             spaceBetween={20}

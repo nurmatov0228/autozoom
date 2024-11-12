@@ -3,42 +3,44 @@ import "../styles/cars.scss";
 import axios from "axios";
 import { NavLink, useParams } from "react-router-dom";
 import { FaTelegram, FaWhatsapp } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const CarsPage = () => {
+  const { t } = useTranslation();
   const API = `https://realauto.limsa.uz/api/cars`;
   const [base, setBase] = useState([]);
   const [model, setModel] = useState("");
   const [filteredCars, setFilteredCars] = useState([]);
-  const [loading, setLoading] = useState(true); // Yuklanish holati
-  const [error, setError] = useState(null); // Xatolik holati
+  const [loading, setLoading] = useState(true); // Loading state
+  const [error, setError] = useState(null); // Error state
   const params = useParams();
 
   const carTypeRefs = useRef([]);
   const brandRefs = useRef([]);
 
   const fetchData = async () => {
-    setLoading(true); // Ma'lumot yuklanayotganini bildirish
-    setError(null); // Xatolikni tozalash
+    setLoading(true); // Indicate loading state
+    setError(null); // Clear any errors
     try {
       const response = await axios.get(API);
       setBase(response?.data?.data || []);
 
       if (params?.id) {
-        const selecCategories = response?.data?.data.filter(
+        const selectedCategories = response?.data?.data.filter(
           (e) => e?.id === params?.id
         );
-        const newbase = response?.data?.data.filter(
-          (e) => e?.category?.name_en == selecCategories[0]?.category?.name_en
+        const newBase = response?.data?.data.filter(
+          (e) => e?.category?.name_en == selectedCategories[0]?.category?.name_en
         );
-        setFilteredCars(newbase);
+        setFilteredCars(newBase);
       } else if (params?.id === undefined) {
         setFilteredCars(response?.data?.data);
       }
     } catch (error) {
-      setError("Ma'lumotlarni olishda xatolik yuz berdi.");
+      setError(t("errorMessage"));
       console.error("Error fetching data:", error);
     } finally {
-      setLoading(false); // Yuklanish tugadi
+      setLoading(false); // End loading state
     }
   };
 
@@ -79,6 +81,7 @@ const CarsPage = () => {
 
     setFilteredCars(filtered);
   };
+
   const handleResetFilter = () => {
     setModel("");
     setFilteredCars(base);
@@ -96,10 +99,10 @@ const CarsPage = () => {
       <div className="cars__container">
         <aside className="filter">
           <div className="filter-container">
-            <h3 className="filter-title">Filter by</h3>
+            <h3 className="filter-title">{t("filterBy")}</h3>
             <form className="filter-part-car" onSubmit={handleApplyFilter}>
               <div className="filter-to-offer">
-                <h4 className="part-title">Car type</h4>
+                <h4 className="part-title">{t("carType")}</h4>
                 {uniqueCategories.map((category, index) => (
                   <label className="filter-labels" key={index}>
                     <input
@@ -114,7 +117,7 @@ const CarsPage = () => {
                 ))}
               </div>
               <div className="filter-to-offer">
-                <h4 className="part-title">Brand</h4>
+                <h4 className="part-title">{t("brand")}</h4>
                 {uniqueBrands.map((brand, index) => (
                   <label className="filter-labels" key={index}>
                     <input
@@ -129,14 +132,14 @@ const CarsPage = () => {
                 ))}
               </div>
               <div className="filter-to-offer">
-                <h4 className="part-title">Model</h4>
+                <h4 className="part-title">{t("model")}</h4>
                 <select
                   className="filter-to-select"
                   value={model}
                   onChange={handleModelChange}
                 >
                   <option value="" hidden>
-                    Select Model
+                    {t("selectModel")}
                   </option>
                   {base.map((item) => (
                     <option
@@ -155,10 +158,10 @@ const CarsPage = () => {
                   className="reset-button"
                   onClick={handleResetFilter}
                 >
-                  Reset
+                  {t("reset")}
                 </button>
                 <button type="submit" className="apply-button">
-                  Apply Filter
+                  {t("applyFilter")}
                 </button>
               </div>
             </form>
@@ -167,7 +170,7 @@ const CarsPage = () => {
         <div className="filter-cars">
           <div className="all-cars">
             {loading ? (
-              <p className="loading">Loading...</p>
+              <p className="loading">{t("loading")}</p>
             ) : error ? (
               <p className="error-message">{error}</p>
             ) : filteredCars.length > 0 ? (
@@ -199,18 +202,18 @@ const CarsPage = () => {
                     <div className="filter-cars-card-bottom">
                       <button className="btn-w">
                         <FaWhatsapp />
-                        WhatsApp
+                        {t("whatsapp")}
                       </button>
                       <button className="btn-t">
                         <FaTelegram />
-                        Telegram
+                        {t("telegram")}
                       </button>
                     </div>
                   </div>
                 </NavLink>
               ))
             ) : (
-              <p className="empty">Mashinalar topilmadi</p>
+              <p className="empty">{t("noCarsFound")}</p>
             )}
           </div>
         </div>
