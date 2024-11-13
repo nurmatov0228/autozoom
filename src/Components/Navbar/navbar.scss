@@ -109,9 +109,9 @@
       }
 
       &.active {
-        color: #eb0e0e; /* Aktiv link rangini qizilga o'zgartirish */
-        font-weight: bold; /* Bold qilish */
-        padding-bottom: 5px; /* Pastki bo‘shliq */
+        color: #eb0e0e; 
+        font-weight: bold; 
+        padding-bottom: 5px;
       }
     }
   }
@@ -145,9 +145,42 @@
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Har qatorda 3 ta element */
-    column-gap: 20px; /* Elementlar orasidagi bo'shliq */
-    row-gap: 15px; /* Qatorlar orasidagi bo'shliq */
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px; 
+    row-gap: 15px; 
+
+    .burger-button {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    
+    .burger-line {
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .burger-button.open .burger-line:nth-child(1) {
+      transform: rotate(45deg);
+      position: relative;
+      top: 8px;
+    }
+    
+    .burger-button.open .burger-line:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .burger-button.open .burger-line:nth-child(3) {
+      transform: rotate(-45deg);
+      position: relative;
+      top: -8px;
+    }
 
     .dropdown-column {
       display: flex;
@@ -185,4 +218,51 @@ span {
   font-weight: 700;
   filter: drop-shadow(4px 4px 6px rgba(255, 255, 255, 0.3));
   color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px; /* Adjusted padding */
+
+  &_search {
+    &_input {
+      display: none;
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  &_icon {
+    display: none;
+  }
+
+  &_navlink {
+    display: none;
+
+    a {
+      display: none;
+    }
+  }
+
+  &_phon {
+    display: none;
+  }
+
+  .navbar_navlink.active {
+    display: block;
+    background-color: #a52424;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .burger-button {
+    display: flex;
+  }
+}
 }

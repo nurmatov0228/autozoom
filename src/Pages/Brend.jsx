@@ -80,7 +80,6 @@ const Brend = () => {
           <Swiper
             slidesPerView={4}
             spaceBetween={20}
-            pagination={{ clickable: true }}
             navigation={true}
             breakpoints={{
               1024: { slidesPerView: 4 },
@@ -88,7 +87,7 @@ const Brend = () => {
               600: { slidesPerView: 2 },
               480: { slidesPerView: 1 },
             }}
-            modules={[Pagination, Navigation]}
+            modules={[ Navigation]}
             className="mySwiper"
           >
             {brands.map((brand, index) => (

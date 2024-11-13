@@ -9,10 +9,14 @@ import CabrioletCars from "../Components/UI/CabrioletCars/CabrioletCars";
 import Services from "../Components/UI/Services/Services";
 import Rental from "../Components/UI/Rental/Rental";
 import InstaImages from "../Components/UI/InstaImages/InstaImages";
+import Intro from "../Components/UI/Intro/Intro";
+import Brend from "./Brend";
 
 const Home = () => {
   return (
     <div className="home">
+      <Intro/>
+      <Brend/>
       <BudgetCars />
       <SportCars />
       <HyperCars />

@@ -28,6 +28,7 @@ function Router() {
           <Route path="/cars" element={<CarsPage />} />
           <Route path="/cars/:id" element={<CarsPage />} />
           <Route path="/caritem/:id" element={<CarItem />} />
+          {/* <Route path="/caritem/:id" element={<CarItem />} /> */}
         </Routes>
       </Suspense>
     </div>
