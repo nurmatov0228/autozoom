@@ -4,14 +4,14 @@ import rasmRu from "../../assets/languageRu.png";
 import rasmBg from "../../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import i18next from "i18next"; 
-import { useTranslation } from "react-i18next"; 
+import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 import "./navbar.scss";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [burgerMenu, setBurgerMenu] = useState(false); // State for burger menu toggle
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
   const handleMouseEnter = () => {
     setShowDropdown(true);
@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   const handleLanguageChange = (language) => {
-    i18next.changeLanguage(language); 
+    i18next.changeLanguage(language);
   };
 
   const toggleBurgerMenu = () => {
@@ -60,6 +60,18 @@ const Navbar = () => {
               <img width={110} height={60} src={rasmBg} alt="Logo" />
             </NavLink>
           </div>
+
+          {/* Burger Button */}
+          <div
+            className={`burger-btn ${burgerMenu ? "open" : ""}`}
+            onClick={toggleBurgerMenu}
+          >
+            <div className="burger-btn__line"></div>
+            <div className="burger-btn__line"></div>
+            <div className="burger-btn__line"></div>
+          </div>
+
+          {/* Burger Menu Links */}
           <div className={`navbar_navlink ${burgerMenu ? "active" : ""}`}>
             <NavLink
               to="/cars"
@@ -111,13 +123,8 @@ const Navbar = () => {
               {t("BLOG")}
             </NavLink>
           </div>
-          
-          <div className="burger-button" onClick={toggleBurgerMenu}>
-            <span className={`burger-line ${burgerMenu ? "open" : ""}`}></span>
-            <span className={`burger-line ${burgerMenu ? "open" : ""}`}></span>
-            <span className={`burger-line ${burgerMenu ? "open" : ""}`}></span>
-          </div>
         </div>
+
         <a className="navbar_phon" href="tel:+998 (99) 000 04 41">
           +998 (99) 000 04 41
         </a>

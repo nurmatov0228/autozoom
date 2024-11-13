@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Intro.scss";
+import Brend from "../../../Pages/Brend";
 
 const Intro = () => {
   const { t } = useTranslation();
@@ -88,7 +89,10 @@ const Intro = () => {
           </div>
         </div>
       </div>
+      <Brend/>
     </div>
+
+    
   );
 };
 

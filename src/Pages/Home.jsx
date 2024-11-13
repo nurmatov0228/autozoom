@@ -16,7 +16,6 @@ const Home = () => {
   return (
     <div className="home">
       <Intro/>
-      <Brend/>
       <BudgetCars />
       <SportCars />
       <HyperCars />

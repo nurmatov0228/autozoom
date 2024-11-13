@@ -93,11 +93,14 @@ const Brend = () => {
             {brands.map((brand, index) => (
               <SwiperSlide key={index}>
                 <div className="brand-card">
-                  <img
+                 <div className="img">
+                 <img
+                    className="img"
                     src={brand.imgSrc}
                     alt={brand.name}
                     style={{ width: '100px', height: '100px', objectFit: 'contain' }}
                   />
+                 </div>
                   <p>{brand.name}</p>
                 </div>
               </SwiperSlide>
