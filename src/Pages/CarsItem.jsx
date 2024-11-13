@@ -17,6 +17,7 @@ import { CiTimer } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { IoCarSportOutline, IoColorPaletteOutline } from "react-icons/io5";
 import { Bounce, toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const CarsItem = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -24,6 +25,7 @@ const CarsItem = () => {
   const [images, setImages] = useState([]); // Boshlang'ich qiymat sifatida bo'sh massiv
   const API = `https://realauto.limsa.uz/api/cars`;
   const params = useParams()?.id;
+  const { t } = useTranslation();
 
   const fetchData = async () => {
     try {
@@ -155,23 +157,23 @@ const CarsItem = () => {
               <div className="caritem__right__top">
                 <div className="caritem__box">
                   <p className="caritem__aedText">
-                    AED 0 / <span> $ 0</span>
+                     {t("ead")} 0 / <span> $ 0</span>
                   </p>
-                  <p className="caritem__perDay">per day</p>
-                  <p className="caritem__price">AED / $</p>
+                  <p className="caritem__perDay">{t("pricePerDay")}</p>
+                  <p className="caritem__price">{t("ead")} / $</p>
                 </div>
                 <div className="caritem__box">
-                  <p className="caritem__deposit">Deposit</p>
-                  <p className="caritem__deposit">Premium protection</p>
+                  <p className="caritem__deposit">{t("deposit")}</p>
+                  <p className="caritem__deposit">{t("premiumProtection")}</p>
                 </div>
                 <div className="caritem__box">
-                  <p className="caritem__aed">AED {item?.deposit}</p>
+                  <p className="caritem__aed">{t("ead")} {item?.deposit}</p>
                   <p className="caritem__paymet">
-                    AED 5000 for credit cards payment
+                  {t("5000")}
                   </p>
-                  <p className="caritem__aed">AED {item?.premium_protection}</p>
+                  <p className="caritem__aed">{t("ead")} {item?.premium_protection}</p>
                   <p className="caritem__paymet">
-                    AED 5000 for price for 1 day
+                  {t("500")}
                   </p>
                 </div>
               </div>
@@ -286,7 +288,7 @@ const CarsItem = () => {
                       <td>{item?.transmission}</td>
                       <td>{item?.drive_side}</td>
                       <td>{item?.petrol}</td>
-                      <td>{item?.city?.name} cars</td>
+                      <td>{item?.city?.name} {t("cars")}</td>
                     </tr>
                   </tbody>
                 </div>
@@ -327,15 +329,15 @@ const CarsItem = () => {
           <div className="caritem__bottom">
             <div className="caritem__bottom-left">
               <h3 className="caritem__subtitle">
-                Good to know {item?.model?.name} ({item?.color})
+                {t("goodToKnow")}{item?.model?.name} ({item?.color})
               </h3>
-              <p className="caritem__subtext">Kilometrage limit per day</p>
+              <p className="caritem__subtext">{t("kilometrageLimit")}</p>
               <h4 className="caritem__secondtitle">
-                {item?.max_speed} KM Every extra km will be charged 20 AED/km
+                {item?.max_speed} {t("extraKmCharge")}
               </h4>
-              <p className="caritem__subtext">Car rental deposit amount</p>
+              <p className="caritem__subtext">{t("amo")}</p>
               <h5 className="caritem__tourthtitle">
-                The deposit is refunded within 28 days
+                {t("depositRefund")}
               </h5>
             </div>
             <div className="caritem__bottom-right">
@@ -344,7 +346,7 @@ const CarsItem = () => {
                   <input
                     className="caritem__form__input"
                     type="text"
-                    placeholder="Name"
+                    placeholder={t("name")}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
@@ -352,7 +354,7 @@ const CarsItem = () => {
                   <input
                     className="caritem__form__input"
                     type="number"
-                    placeholder="Phone"
+                    placeholder={t("phon")}
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     required
@@ -360,7 +362,7 @@ const CarsItem = () => {
                   <input
                     className="caritem__form__input"
                     type="text"
-                    placeholder="Details"
+                    placeholder={t("det")}
                     value={details}
                     onChange={(e) => setDetails(e.target.value)}
                     required
@@ -368,7 +370,7 @@ const CarsItem = () => {
                   <input
                     className="caritem__form__button"
                     type="submit"
-                    value="Send"
+                    value={t("send")}
                     required
                   />
                 </form>
