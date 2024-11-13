@@ -2,17 +2,21 @@ import React from "react";
 import buggie from "../../../assets/buggie.jpg";
 import roys from "../../../assets/rolls.jpg";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./services.scss";
+
 const Services = () => {
+  const { t } = useTranslation();
+
   const service = [
     {
       id: 1,
       img: buggie,
-      title: "Ride a buggy in Dubai and have fun",
-      text: "Experience the thrill of a dune buggy tour in Dubai with us. We offer free hotel pick-up & drop-off service. Book now",
+      title: t("service1Title"),
+      text: t("service1Text"),
       btn: (
         <NavLink to="/servicebuggy" className="services__link">
-          <p>LEARN MORE</p>
+          <p>{t("learnMore")}</p>
           <svg
             className="services__icon"
             width="50"
@@ -33,11 +37,11 @@ const Services = () => {
     {
       id: 2,
       img: roys,
-      title: "Photoshoot with luxury car rental Dubai",
-      text: "Professional car photoshoot as an additional type of service at Terra Car Rental",
+      title: t("service2Title"),
+      text: t("service2Text"),
       btn: (
         <NavLink to="/servicecar" className="services__link">
-          <p>LEARN MORE</p>
+          <p>{t("learnMore")}</p>
           <svg
             className="services__icon"
             width="50"
@@ -56,20 +60,21 @@ const Services = () => {
       ),
     },
   ];
+
   return (
     <div className="services">
       <div className="container">
         <div className="services__wrapper">
           <div className="contact__nav">
             <NavLink to="/" className="navlink">
-              Luxury cars for Rent in Dubai
+              {t("servicesNav1")}
             </NavLink>
             /
             <NavLink to="/" className="navlink">
-              Services
+              {t("servicesNav2")}
             </NavLink>
           </div>
-          <h2 className="contact__title">Services</h2>
+          <h2 className="contact__title">{t("servicesTitle")}</h2>
           <div className="services__items">
             {service?.map((elem) => (
               <div className="services__item" key={elem.id}>

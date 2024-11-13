@@ -5,10 +5,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // Import i18next
 
-const BudgetCars = () => {
+const SportsCars = () => {
   const API = `https://realauto.limsa.uz/api/cars`;
   const [base, setBase] = useState([]);
+  const { t } = useTranslation(); // Hook to access translation
 
   const fetchData = async () => {
     try {
@@ -32,9 +34,9 @@ const BudgetCars = () => {
       <div className="container">
         <div className="budget__container">
           <div className="budget__header">
-            <h1>Sports cars Rental Emirates</h1>
+            <h1>{t("sportsCarsRental")}</h1> {/* Use translation here */}
             <NavLink to={`/cars/${sportCars[0]?.id}`} className="btnRuB">
-              <p>SEE ALL</p>
+              <p>{t("seeAll")}</p> {/* Use translation for "SEE ALL" */}
               <svg
                 className="imgbtn"
                 width="32"
@@ -60,8 +62,8 @@ const BudgetCars = () => {
             }}
           >
             {sportCars.map((item) => (
-              <SwiperSlide>
-                <Card key={item.id} item={item} location={"budget"} />
+              <SwiperSlide key={item.id}>
+                <Card item={item} location={"budget"} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -71,4 +73,4 @@ const BudgetCars = () => {
   );
 };
 
-export default BudgetCars;
+export default SportsCars;
