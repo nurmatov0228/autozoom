@@ -1,0 +1,27 @@
+.loc-city {
+  width: 100%;
+  background: #1e1f27;
+  font-family: Averta, sans-serif;
+  padding: 30px 0 50px;
+  &__wrapper {
+    display: flex;
+    gap: 55px;
+  }
+  h2 {
+    margin-bottom: 0 !important;
+  }
+  &__location {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
+  &__text {
+    font-size: 17px;
+    color: #aaa;
+    transition: all 0.3s;
+    &:hover {
+      cursor: pointer;
+      color: #f5f5f5;
+    }
+  }
+}
