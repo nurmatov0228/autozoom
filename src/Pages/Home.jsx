@@ -8,6 +8,7 @@ import SuvCars from "../Components/UI/SuvCars/SuvCars";
 import CabrioletCars from "../Components/UI/CabrioletCars/CabrioletCars";
 import Services from "../Components/UI/Services/Services";
 import Rental from "../Components/UI/Rental/Rental";
+import Faq from "../Components/UI/Faq/Faq";
 import InstaImages from "../Components/UI/InstaImages/InstaImages";
 import Location from "../Components/UI/Location/Location";
 
@@ -22,6 +23,7 @@ const Home = () => {
       <CabrioletCars />
       <Services />
       <Rental />
+      <Faq />
       <InstaImages />
       <Location />
     </div>
