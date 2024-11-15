@@ -115,6 +115,8 @@ const CarsPage = () => {
                     {category}
                   </label>
                 ))}
+
+                
               </div>
               <div className="filter-to-offer">
                 <h4 className="part-title">{t("brand")}</h4>
