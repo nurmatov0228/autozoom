@@ -32,7 +32,7 @@ const InstaImages = () => {
         <div className="instaimages__wrapper">
           <h2 className="contact__title">FOLLOW US ON INSTAGRAM</h2>
           <Swiper
-            spaceBetween={7}
+            spaceBetween={9}
             slidesPerView={6}
             loop={false}
             pagination={{ clickable: false }}

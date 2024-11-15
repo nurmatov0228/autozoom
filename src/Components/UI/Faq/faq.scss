@@ -1,0 +1,203 @@
+.faq {
+  font-family: Averta, sans-serif;
+  background: #1e1f27;
+  background-image: url(../../../assets/ferrari.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+  h2 {
+    margin-bottom: 0 !important;
+  }
+  hr {
+    height: 1px !important;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    width: 950px;
+    padding: 30px 0 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__name {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 23px;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+  &__accordion {
+    display: none;
+    padding: 25px;
+    color: #f5f5f5;
+    font-size: 20px;
+    position: absolute;
+    z-index: 100;
+    top: 30px;
+    border-radius: 10px;
+  }
+}
+.leftstrelka[data-v-fa1e103a] {
+  width: 30px;
+  height: 30px;
+  transition: 1s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.rightstrelka[data-v-fa1e103a] {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.leftanimation[data-v-fa1e103a] {
+  animation: 1s leftcurved-fa1e103a alternate-reverse infinite;
+  position: absolute;
+  transform: rotate(180deg) translate(50%);
+}
+.rightanimation[data-v-fa1e103a] {
+  animation: 1s rightcurved-fa1e103a alternate-reverse infinite;
+  position: absolute;
+  transform: translate(-50%);
+}
+.bottom {
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+  position: absolute;
+  transform: rotate(-90deg) translate(100%);
+  animation: 1s ease 0s infinite alternate-reverse none running
+    bottomanimationcurved-fa1e103a;
+}
+.scale {
+  animation: border 1.5s ease, rainbow 8s ease infinite;
+  scale: 1;
+}
+.no-scale {
+  animation: no-border 1.5s ease, rainbow 8s ease infinite;
+  scale: 0;
+}
+.open-acc {
+  display: flex;
+  top: 100px;
+  transition: 0.3s;
+  background: linear-gradient(
+    90deg,
+    #272933,
+    #272933,
+    #272933,
+    #002b38,
+    #273233,
+    #272933,
+    #272933
+  );
+  background-size: 300% 100%;
+  transform: translateZ(0);
+  animation: accordion 0.5s ease, rainbow 8s ease infinite;
+}
+.close-acc {
+  animation: no-accordion 0.5s ease !important;
+  top: 30px;
+}
+@keyframes rightcurved-fa1e103a {
+  0% {
+    margin-left: 100%;
+    fill: #c9c6c6;
+  }
+
+  to {
+    margin-left: 50%;
+    fill: #7c7c7c;
+  }
+}
+@keyframes leftcurved-fa1e103a {
+  0% {
+    margin-left: 100%;
+    fill: #c9c6c6;
+  }
+  100% {
+    margin-left: 50%;
+    fill: #7c7c7c;
+  }
+}
+@keyframes bottomanimationcurved-fa1e103a {
+  0% {
+    margin-top: 50%;
+    fill: #c9c6c6;
+  }
+
+  to {
+    margin-top: 100%;
+    fill: #7c7c7c;
+  }
+}
+@keyframes no-border {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
+}
+@keyframes border {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes accordion {
+  0% {
+    top: 30px;
+    background: #27293300;
+    opacity: 0;
+  }
+  50% {
+    background: #272933;
+    opacity: 0.7;
+  }
+  100% {
+    top: 100px;
+    background: #272933;
+    opacity: 1;
+  }
+}
+@keyframes no-accordion {
+  0% {
+    display: flex;
+    top: 100px;
+    background: #272933;
+  }
+  50% {
+    background: #272933;
+    opacity: 0.5;
+  }
+  100% {
+    top: 10px;
+    background: #27293300;
+    opacity: 0;
+    z-index: -10;
+  }
+}

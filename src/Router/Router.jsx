@@ -1,6 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Loader from "../Pages/Loader";
+import Services from "../Components/UI/Services/Services";
+import Servicebuggy from "../Pages/Servicebuggy";
+import Servicecar from "../Pages/Servicecar";
+import Faq from "../Components/UI/Faq/Faq";
 function Router() {
   const Home = lazy(() => import("../Pages/Home"));
   const About = lazy(() => import("../Pages/About"));
@@ -29,6 +33,10 @@ function Router() {
           <Route path="/cars/:id" element={<CarsPage />} />
           <Route path="/caritem/:id" element={<CarItem />} />
           {/* <Route path="/caritem/:id" element={<CarItem />} /> */}
+          <Route path="/services" element={<Services />} />
+          <Route path="/servicebuggy" element={<Servicebuggy />} />
+          <Route path="/servicecar" element={<Servicecar />} />
+          <Route path="/faq" element={<Faq />} />
         </Routes>
       </Suspense>
     </div>
