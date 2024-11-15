@@ -1,17 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import rasmEn from "../../assets/languageEn.png";
 import rasmRu from "../../assets/languageRu.png";
 import rasmBg from "../../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import "./navbar.scss";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [burgerMenu, setBurgerMenu] = useState(false); // State for burger menu toggle
+  const [burgerMenu, setBurgerMenu] = useState(false);
+  const [cars, setCars] = useState([]); // API-dan olingan mashinalar ro'yxati
+  const [searchTerm, setSearchTerm] = useState(""); // Foydalanuvchi kiritayotgan matn
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const API = `https://realauto.limsa.uz/api/cars`;
+    fetch(API)
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setCars(data); // Agar data massiv bo'lsa, uni setCars ga o'rnatamiz
+        } else {
+          console.error("API dan qaytgan data massiv emas:", data);
+          setCars([]); // xatolik yuzaga kelgan taqdirda bo'sh massiv
+        }
+      })
+      .catch((error) => console.error("Xato:", error));
+  }, []);
+
+  const handleSearch = () => {
+    // Kiritilgan matnga mos avtomobillarni qidiring
+    const filteredCars = cars.filter((car) =>
+      car.model?.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    console.log("Filtered Cars:", filteredCars); // Qidiruv natijalarini konsolda ko'rsatadi
+
+    // Keyinchalik natijalarni "cars" sahifasida ko'rsatish uchun filteredCars massivini saqlang yoki to'g'ridan-to'g'ri sahifaga o'tkazish kodini yozing.
+    navigate("/cars", { state: { filteredCars } });
+  };
 
   const handleMouseEnter = () => {
     setShowDropdown(true);
@@ -26,7 +55,7 @@ const Navbar = () => {
   };
 
   const toggleBurgerMenu = () => {
-    setBurgerMenu(!burgerMenu); // Toggle the burger menu
+    setBurgerMenu(!burgerMenu);
   };
 
   return (
@@ -51,8 +80,13 @@ const Navbar = () => {
           </div>
           <div className="navbar_search">
             <div className="navbar_input">
-              <FaSearch className="navbar_icon" />
-              <input type="text" placeholder={t("searchPlaceholder")} />
+              <FaSearch onClick={handleSearch} className="navbar_icon" />
+              <input
+                type="text"
+                placeholder={t("searchPlaceholder")}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
           </div>
           <div className="navbar_logo">
