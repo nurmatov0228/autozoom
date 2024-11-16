@@ -80,7 +80,6 @@ const Brend = () => {
           <Swiper
             slidesPerView={4}
             spaceBetween={20}
-            pagination={{ clickable: true }}
             navigation={true}
             breakpoints={{
               1024: { slidesPerView: 4 },
@@ -88,17 +87,20 @@ const Brend = () => {
               600: { slidesPerView: 2 },
               480: { slidesPerView: 1 },
             }}
-            modules={[Pagination, Navigation]}
+            modules={[ Navigation]}
             className="mySwiper"
           >
             {brands.map((brand, index) => (
               <SwiperSlide key={index}>
                 <div className="brand-card">
-                  <img
+                 <div className="img">
+                 <img
+                    className="img"
                     src={brand.imgSrc}
                     alt={brand.name}
                     style={{ width: '100px', height: '100px', objectFit: 'contain' }}
                   />
+                 </div>
                   <p>{brand.name}</p>
                 </div>
               </SwiperSlide>
