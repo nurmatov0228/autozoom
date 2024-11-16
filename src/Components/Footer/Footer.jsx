@@ -29,12 +29,42 @@ const Footer = () => {
                   <NavLink to="/cars" className="footer__h4">
                     {t("cars")}
                   </NavLink>
-                  <NavLink className="footer__text">{t("budgetCars")}</NavLink>
-                  <NavLink className="footer__text">{t("sportsCars")}</NavLink>
-                  <NavLink className="footer__text">{t("hyperCars")}</NavLink>
-                  <NavLink className="footer__text">{t("luxuryCars")}</NavLink>
-                  <NavLink className="footer__text">{t("suvCars")}</NavLink>
-                  <NavLink className="footer__text">{t("cabrioletCars")}</NavLink>
+                  <NavLink
+                    to={`/cars/8df92f41-b98f-4dec-b48f-28ed1f5c5e0e`}
+                    className="footer__text"
+                  >
+                    {t("budgetCars")}
+                  </NavLink>
+                  <NavLink
+                    to={`/cars/7430fb57-0757-4677-aeaf-6277fd3a9e62`}
+                    className="footer__text"
+                  >
+                    {t("sportsCars")}
+                  </NavLink>
+                  <NavLink
+                    to={`/cars/f4691810-8485-468f-bca3-ef9f6d31fa69`}
+                    className="footer__text"
+                  >
+                    {t("hyperCars")}
+                  </NavLink>
+                  <NavLink
+                    to={`/cars/690d01e3-99fb-4fc0-baf1-ca860b767c87`}
+                    className="footer__text"
+                  >
+                    {t("luxuryCars")}
+                  </NavLink>
+                  <NavLink
+                    to={`/cars/c53f688c-29e3-47d5-b904-a0ec8300cc6a`}
+                    className="footer__text"
+                  >
+                    {t("suvCars")}
+                  </NavLink>
+                  <NavLink
+                    to={`/cars/7b2c6420-3e14-4e4e-9903-5e6ee45e59b1`}
+                    className="footer__text"
+                  >
+                    {t("cabrioletCars")}
+                  </NavLink>
                 </div>
                 <div className="footer__other-list">
                   <NavLink to="/blog" className="footer__h4">
