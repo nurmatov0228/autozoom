@@ -32,8 +32,39 @@ const InstaImages = () => {
         <div className="instaimages__wrapper">
           <h2 className="contact__title">FOLLOW US ON INSTAGRAM</h2>
           <Swiper
+            className="cp-slide"
             spaceBetween={9}
             slidesPerView={6}
+            loop={true}
+            pagination={{ clickable: false }}
+            navigation={false}
+          >
+            {[
+              photo1,
+              photo2,
+              photo3,
+              photo4,
+              photo5,
+              photo6,
+              photo7,
+              photo8,
+              photo9,
+              photo10,
+            ].map((photo, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={photo}
+                  alt=""
+                  className="instaimages__img"
+                  onClick={() => openModal(photo)}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <Swiper
+            className="res-slide"
+            spaceBetween={9}
+            slidesPerView={1}
             loop={false}
             pagination={{ clickable: false }}
             navigation={false}

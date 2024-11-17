@@ -8,6 +8,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 50px;
+    @media (max-width: 1250px) {
+      gap: 40px;
+    }
+    @media (max-width: 1250px) {
+      gap: 35px;
+    }
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 35px;
+    }
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 500px) {
+      gap: 30px;
+    }
   }
   &__item {
     width: 400px;
@@ -19,12 +37,23 @@
       #0000000f 41.78%,
       #5050500d 102.46%
     );
+    @media (max-width: 450px) {
+      width: 100%;
+    }
   }
   &__img {
+    border-radius: 12px;
     width: 100%;
     height: 260px;
-    border-radius: 12px;
     object-fit: cover;
+    @media (max-width: 500px) {
+      object-fit: contain;
+      height: 100%;
+    }
+    @media (max-width: 768px) {
+      object-fit: contain;
+      height: 100%;
+    }
   }
   &__box {
     padding: 30px 25px;
@@ -36,28 +65,61 @@
   &__holat {
     font-size: 19px;
     font-weight: 400;
+    @media (max-width: 1100px) {
+      font-size: 18px;
+    }
+    @media (max-width: 500px) {
+      font-size: 17px;
+    }
+    @media (max-width: 400px) {
+      font-size: 16px;
+    }
   }
   &__persons {
     display: flex;
     align-items: center;
     gap: 20px;
+    @media (max-width: 380px) {
+      gap: 15px;
+    }
   }
   &__number {
     font-size: 18px;
     padding: 10px 25px;
     border: 1px solid #11d198;
     border-radius: 10px;
+    @media (max-width: 380px) {
+      padding: 8px 18px;
+      font-size: 15px;
+    }
   }
   &__person {
     font-size: 18px;
+    @media (max-width: 380px) {
+      font-size: 14px;
+    }
   }
   &__text {
     font-size: 17px;
     letter-spacing: 0.5px;
     line-height: 26px;
+    @media (max-width: 1100px) {
+      font-size: 16px;
+      letter-spacing: normal;
+      line-height: 22px;
+    }
+    @media (max-width: 380px) {
+      font-size: 15px;
+    }
   }
   &__title {
     font-size: 24px;
+    @media (max-width: 1100px) {
+      font-size: 23px;
+    }
+    @media (max-width: 380px) {
+      font-size: 22px;
+    }
   }
   &__inclusions {
     display: flex;
@@ -69,6 +131,12 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    @media (max-width: 1100px) {
+      font-size: 17px;
+    }
+    @media (max-width: 380px) {
+      font-size: 16px;
+    }
   }
   &__icon {
     width: 25px;
@@ -78,6 +146,9 @@
   &__name {
     margin-bottom: -4px;
     letter-spacing: 0.5px;
+    @media (max-width: 1100px) {
+      letter-spacing: 0;
+    }
   }
   &__btn {
     cursor: pointer;
@@ -98,6 +169,18 @@
     }
     &:active {
       background: #b8090c;
+    }
+    @media (max-width: 1100px) {
+      font-size: 23px;
+    }
+    @media (max-width: 450px) {
+      width: 90%;
+      height: 50px;
+      margin: 0 auto;
+    }
+    @media (max-width: 380px) {
+      width: 100%;
+      font-size: 20px;
     }
   }
 }

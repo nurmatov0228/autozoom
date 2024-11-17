@@ -5,6 +5,20 @@
   h2 {
     font-size: 32px;
     margin-bottom: 30px;
+    @media (max-width: 350px) {
+      font-size: 24px;
+    }
+  }
+  .cp-slide {
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+  .res-slide {
+    display: none;
+    @media (max-width: 500px) {
+      display: flex !important;
+    }
   }
   .swiper {
     .swiper-slide {
@@ -44,6 +58,10 @@
       width: 600px;
       height: 600px;
       border-radius: 15px;
+      @media (max-width: 700px) {
+        width: 90%;
+        height: 100%;
+      }
     }
 
     &__close {
@@ -55,6 +73,9 @@
       font-size: 36px;
       color: #fff;
       cursor: pointer;
+      @media (max-width: 700px) {
+        font-size: 32px;
+      }
     }
   }
 }
