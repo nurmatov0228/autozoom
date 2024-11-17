@@ -22,6 +22,8 @@ const BudgetCars = () => {
     }
   };
 
+  console.log(base);
+
   useEffect(() => {
     fetchData();
   }, []);

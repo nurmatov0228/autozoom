@@ -36,7 +36,7 @@ const BudgetCars = () => {
           <div className="budget__header">
             <h1>{t('hyperCarsRental')}</h1> {/* Tarjima qo'shildi */}
             <NavLink to={`/cars/${sportCars[0]?.id}`} className="btnRuB">
-              <p>{t('seeAll')}</p> {/* Tarjima qo'shildi */}
+              <p>{t('seeAll')}</p> 
               <svg
                 className="imgbtn"
                 width="32"

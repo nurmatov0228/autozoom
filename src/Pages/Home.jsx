@@ -10,11 +10,14 @@ import Services from "../Components/UI/Services/Services";
 import Rental from "../Components/UI/Rental/Rental";
 import Faq from "../Components/UI/Faq/Faq";
 import InstaImages from "../Components/UI/InstaImages/InstaImages";
+import Intro from "../Components/UI/Intro/Intro";
+import Brend from "./Brend";
 import Location from "../Components/UI/Location/Location";
 
 const Home = () => {
   return (
     <div className="home">
+      <Intro/>
       <BudgetCars />
       <SportCars />
       <HyperCars />
